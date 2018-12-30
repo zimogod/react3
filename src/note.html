@@ -1,0 +1,131 @@
+public:
+	基本不动，里面只有唯一的入口index.html
+	文件
+src：
+	主要开发文件夹
+	
+serviceWorker.js是本地服务器之类的配置，
+不要动
+
+//使用import缓存的组件或者其他文件必须在文件的最上面
+
+创建组件三步
+	1、缓存依赖
+	2、根据上面依赖建立组件
+	3、返回组件(暴露接口)
+BrowserRouter:
+	是浏览器标准的跳转方式，相当于vue中是我mode:history
+	只允许包含一个子元素
+Route:就是加载组件的路由跳转依赖
+Switch：
+	就是一个路由组件包裹容器，而且可以进行切换，就是换内容
+	不需要加载所有的路由组件，用哪个组价就加载哪个组件，提高
+	了网页性能
+Redirect：
+	重定向，找不到页面的时候，或者嵌套路由很深的时候直接导航到某个页面
+
+Link:进行跳转的标签组件，相当于a标签，锚点跳转，里面有to属性
+
+NavLink:就是激活状态下的导航默认路由显示
+
+exact：精确匹配路由，默认路由的标识，默认值为true
+
+this.props.children:显示容器，相当于vue中的router-view标签组件
+
+设置动态路由时，对象的方式进行跳转时，将path换为pathname
+
+所有的路由参数都在this.props里面，
+this.props中的参数分别都在location、match、history
+params在match里面
+其他的都在location里面
+
+路由中：
+	path属性是可以省略的，component是必须要传的属性
+
+	总路由容器中的path属性的路径必须和组件中的Link标签
+	跳转路径保持一致
+
+	获取params：this.props.match.params.list	
+	获取query：this.props.location.query.name
+
+	获取search：this.props.location.search
+
+react-router@2.0.0及以下:
+	Router:路由包裹容器，相当于4.0.0以后的BrowserRouter
+	IndexRoute:是默认路由，可以有多个
+	IndexRedirect：重新定向到根路由
+
+共同点：
+	都是HTML5的history对象中的跳转机制
+
+	hashHistory:2.0.0版本中哈希跳转方式设置
+	browserHistory：2.0.0版本中正常的浏览器跳转方式
+	createMemoryHistory：主要用于服务端渲染，在内存中
+	创建一个history对象，不与URL互动基本不使用，后台主
+	要使用)
+
+首先必须要
+	有node环境，依赖npm下载
+	webpack
+
+	yo:yeoman
+	1、npm/cnpm install yo -g
+		全局安装yeoman脚手架工具
+		检查版本：yo --version
+	2、cnpm install -g generator-react-webpack
+		安装生成react生成器
+	3、输入yo命令
+	4、cnpm install 下载依赖插件
+	5、npm start 启动服务器
+
+下载react-router2.0版本命令
+	cnpm install react-router@2.0.0 -S
+	
+	组件属性的合法性验证插件
+	cnpm install prop-types -S
+
+总结：
+
+	获取params：this.props.match.params.id
+	获取query:this.props.location.query.name
+	回去search：this.props.location.search
+
+	react-router2.0.0版本的路由使用
+	分别有
+		hashHistory
+		browserHistory
+		Router
+		IndexRoute path不用写
+		Route
+		Link
+		NavLink
+		redircet
+	react-router-dom4.0.0以上版本
+	分别有
+		Route
+		Link
+		NavLink
+		redircet
+		IndexRedircet
+		BrowserRouter
+区别：
+	4.0.0以上废除了以前的路由中API
+		hashHistory
+		browserHistory
+		Router
+		IndexRoute
+	新增加了
+		BrowserRouter
+		hashRouter
+		exact 精确匹配
+
+
+
+
+
+
+
+
+
+
+	
